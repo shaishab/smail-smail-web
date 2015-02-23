@@ -1,0 +1,10 @@
+{
+  "site": {
+    "css": {
+      "public/build/css/site.min.css": [
+        "public/sass/style.css",
+        "public/sass/myStyle.css"
+      ]
+    }
+  }
+}

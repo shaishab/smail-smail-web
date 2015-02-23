@@ -1,0 +1,38 @@
+{
+  "name": "smail-web",
+  "version": "0.0.0",
+  "authors": [
+    "Shaishab <shaishab.cse@gmail.com>"
+  ],
+  "description": "This is a secure mail",
+  "main": "app.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "nodejs",
+    "angularjs",
+    "async",
+    "bootstrap",
+    "lodash",
+    "socket.io"
+  ],
+  "license": "MIT",
+  "homepage": "index.jade",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2",
+    "angular": "~1.3.13",
+    "toaster": "~0.4.10",
+    "lodash": "~3.2.0",
+    "socket.io-client": "~1.3.4"
+  }
+}

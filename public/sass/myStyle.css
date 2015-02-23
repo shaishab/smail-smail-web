@@ -1,0 +1,10 @@
+.top-banner {
+  height: 200px;
+  background-color: #008000; }
+
+.body {
+  min-height: 200px; }
+  .body .left-column {
+    background-color: #036993; }
+  .body .right-column {
+    background-color: #038dc5; }

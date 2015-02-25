@@ -1,11 +1,13 @@
 doctype html
 html
-    head
-        title= title
-        link(rel='stylesheet', href='/build/css/bundle.css')
-        link(rel="styleSheet", href="/bower_components/bootstrap/dist/css/bootstrap.min.css")
+	head
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+		title= title
+		link(rel='stylesheet', href='/build/css/bundle.css')
+		link(rel="styleSheet", href="/bower_components/bootstrap/dist/css/bootstrap.min.css")
 
-    body
-        block top-banner
-        div.container-fluid
-            block center-column
+	body
+		include ../topbar/welcomeTopbar.jade
+		div.container-fluid(style="margin-top: 20px; min-height: 500px; padding: 10px;")
+			block content

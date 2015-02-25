@@ -1,4 +1,4 @@
-.top-banner {
+.welcome-topbar {
   	left: 0;
 	position: fixed;
 	top: 0;
@@ -12,12 +12,21 @@
 	border-bottom: 1px solid #eee;
 	color: #444;
 	min-height: 44px;
-	padding: 14px 15px 13px;
+	padding: 10px 15px;
+	height: 70px;
 
-	.main-banner {
-		padding: 0 1.53374233129%;
-		margin: auto;
-		max-width: 978px;
+	.logo {
+		width: 40%;
+		height: 50px;
+		float: left;
+		padding-left: 45px;
+	}
+
+	.sign-in-or-create {
+		width: 60%;
+		height: 50px;
+		float: left;
+		padding-right: 45px;
 	}
 }
 .body {

@@ -1,9 +1,8 @@
-extends layouts/welcome-layout
+extends layouts/layout
 
-block content
-  block top-banner
-    div.row-fluid.top-banner
-      h1= title
-      p Welcome to #{title}
-  block center-column
-      div.col-sm-12 dfgdfg
+block top-banner
+	div.row-fluid.top-banner
+		h1= title
+block center-column
+	div.row-fluid
+		div Welcome to #{title}

@@ -8,7 +8,9 @@ html
 		link(rel="styleSheet", href="/bower_components/bootstrap/dist/css/bootstrap.min.css")
 
 	body
-		include ../topbar/welcomeTopbar
+		block topbar
+			
 		div.container-fluid.welcome-content
 			block content
-		include ../footer/welcomeFooter
+
+		block footer

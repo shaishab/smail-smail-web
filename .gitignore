@@ -71,17 +71,6 @@ Icon
 .idea/
 
 # --------------------
-# Netbeans Files
-# --------------------
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-nbactions.xml
-nb-configuration.xml
-
-# --------------------
 # Node Files
 # --------------------
 .nodemonignore
@@ -99,10 +88,11 @@ node_modules/
 bower_components
 
 # --------------------
+# Build Files
+# --------------------
+build
+
+# --------------------
 # App Files
 # --------------------
-test/coverage/
-modules/public/
-modules/views/
-public/build/
 public/sass/**/*.css

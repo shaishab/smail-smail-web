@@ -8,6 +8,7 @@ html
 		link(rel="styleSheet", href="/bower_components/bootstrap/dist/css/bootstrap.min.css")
 
 	body
-		include ../topbar/welcomeTopbar.jade
-		div.container-fluid(style="margin-top: 20px; min-height: 500px; padding: 10px;")
+		include ../topbar/welcomeTopbar
+		div.container-fluid.welcome-content
 			block content
+		include ../footer/welcomeFooter

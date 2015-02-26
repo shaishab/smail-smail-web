@@ -4,9 +4,28 @@ block topbar
 	include ../topbar/signInTopbar
 
 block content
-	div.row-fluid
+	div.row-fluid.text-center
 		h2 Sign in to continue to Smail
-		div form
+	div.row-fluid.text-center
+		div.col-sm-4.col-md-4.col-dm-offset-4.col-sm-offset-4.sign-in-box(style="padding: 40px;")
+			form.form-horizontal
+				div.form-group
+					label.sr-only.control-label(for='userMail') Email
+					div
+						input#userMail.form-control(type='email', placeholder='Email')
+				div.form-group
+					label.sr-only.control-label(for='userPassword') Password
+					div
+						input#userPassword.form-control(type='password', placeholder='Password')
+				div.form-group
+					div.col-sm-offset-2.col-sm-10
+						div.checkbox
+							label
+								input(type='checkbox')
+								'Remember me
+				div.form-group
+					div.col-sm-offset-2.col-sm-10
+						button.btn.btn-default(type='submit') Sign in
 
 block footer
 	include ../footer/welcomeFooter

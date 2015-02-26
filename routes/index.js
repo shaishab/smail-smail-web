@@ -2,7 +2,7 @@ module.exports = function(app) {
 	"use strict";
 
 	app.route("/").get(function(req, res) {
-		res.render("index", {title: "Smile"});
+		res.render("index", {title: "Smail"});
 	});
 
 	app.route("/signIn").get(function(req, res) {

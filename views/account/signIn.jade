@@ -7,7 +7,8 @@ block content
 	div.row-fluid.text-center
 		h2 Sign in to continue to Smail
 	div.row-fluid.text-center
-		div.col-sm-4.col-md-4.col-dm-offset-4.col-sm-offset-4.sign-in-box(style="padding: 40px;")
+		div.col-sm-4.col-md-4.col-dm-offset-4.col-sm-offset-4.sign-in-box
+			img.img-responsive.img-circle.profile-avatar(src="/img/common/default-avatar.png")
 			form.form-horizontal
 				div.form-group
 					label.sr-only.control-label(for='userMail') Email
@@ -18,14 +19,16 @@ block content
 					div
 						input#userPassword.form-control(type='password', placeholder='Password')
 				div.form-group
-					div.col-sm-offset-2.col-sm-10
-						div.checkbox
+					button.btn.btn-primary(type='submit') Sign in
+				div.form-group
+					div.col-sm-12.col-md-12
+						div.col-sm-6.col-md-6.checkbox
 							label
 								input(type='checkbox')
 								'Remember me
-				div.form-group
-					div.col-sm-offset-2.col-sm-10
-						button.btn.btn-default(type='submit') Sign in
+						div.col-sm-6.col-md-6
+							a(href="#") Forgot password?
+				
 
 block footer
 	include ../footer/welcomeFooter

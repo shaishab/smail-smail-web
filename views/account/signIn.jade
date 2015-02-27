@@ -4,10 +4,10 @@ block topbar
 	include ../topbar/signInTopbar
 
 block content
-	div.row-fluid.text-center
+	div.row-fluid.text-center(style="color: #737171;")
 		h2 Sign in to continue to Smail
 	div.row-fluid.text-center
-		div.col-sm-4.col-md-4.col-dm-offset-4.col-sm-offset-4.sign-in-box
+		div.col-sm-4.col-md-4.col-dm-offset-4.col-sm-offset-4.signin-box
 			img.img-responsive.img-circle.profile-avatar(src="/img/common/default-avatar.png")
 			form.form-horizontal
 				div.form-group
@@ -19,13 +19,13 @@ block content
 					div
 						input#userPassword.form-control(type='password', placeholder='Password')
 				div.form-group
-					button.btn.btn-primary(type='submit') Sign in
+					button.btn.btn-primary.btn-lg.btn-block(type='submit') Sign in
 				div.form-group
 					div.col-sm-12.col-md-12
-						div.col-sm-6.col-md-6.checkbox
+						div.col-sm-6.col-md-6.checkbox(style="padding-top: 0;")
 							label
 								input(type='checkbox')
-								'Remember me
+								|Remember me
 						div.col-sm-6.col-md-6
 							a(href="#") Forgot password?
 				

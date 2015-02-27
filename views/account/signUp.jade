@@ -4,9 +4,70 @@ block topbar
 	include ../topbar/signUpTopbar
 
 block content
-	div.row-fluid
-		h2 Sign up to continue to Smail
-		div sign up form
+	div.row-fluid.text-center(style="color: #737171;")
+		h1 Create your Smail Account
+	div.row-fluid.text-center.signup-page
+		div.col-sm-5.col-md-5.col-sm-offset-1.col-md-offset-1.information-area
+			h2 Take it all with you
+			h4 Switch between devices, and pick up wherever you left off.
+			img.img-responsive.img-thumbnail.different-view-img(src="/img/welcome/different-view.png")
+		div.col-sm-4.col-md-4.col-sm-offset-1.col-md-offset-1.signup-box
+			form.form-horizontal
+				div.form-group
+					label.col-sm-12.col-md-12.text-left(for="firstName") Name
+					div.col-sm-12.col-md-12
+						div.col-sm-6.col-md-6.no-side-padding
+							input#firstName.form-control(type="text", placeholder="First Name")
+						div.col-sm-6.col-md-6.no-side-padding
+							input#lastName.form-control(type="text", placeholder="Last Name")
+					span.text-danger.sr-only You can't leave this empty.
+
+				div.form-group
+					label.col-sm-12.col-md-12.text-left(for="userName") Choose your user name
+					div.col-sm-12.col-md-12
+						input#userName.form-control(type="email", placeholder="Enter email")
+					span.text-danger.sr-only You can't leave this empty.
+				div.form-group
+					label.col-sm-12.col-md-12.text-left(for="password") Password
+					div.col-sm-12.col-md-12
+						input#password.form-control(type="password", placeholder="Password")
+					span.text-danger.sr-only You can't leave this empty.
+				div.form-group
+					label.col-sm-12.col-md-12.text-left(for="confirmPassword") Confirm Password
+					div.col-sm-12.col-md-12
+						input#confirmPassword.form-control(type="password", placeholder="Confirm Password")
+					span.text-danger.sr-only You can't leave this empty.
+				div.form-group
+					label.col-sm-12.col-md-12.text-left(for="birthday") birthday
+					div.col-sm-5.col-md-5
+						input#birthday.form-control(type="text")
+					div.col-sm-3.col-md-3
+						input#birthday.form-control(type="text")
+					div.col-sm-4.col-md-4
+						input#birthday.form-control(type="text")
+					span.text-danger.sr-only You can't leave this empty.
+				div.form-group
+					label.col-sm-12.col-md-12.text-left(for="gender") Gender
+					div.col-sm-12.col-md-12
+						select.form-control
+							option(value='', selected) I am..
+							option(value='male') Male
+							option(value='female') Female
+					span.text-danger.sr-only You can't leave this empty.
+				div.form-group
+					label.col-sm-12.col-md-12.text-left(for="mobilePhone") Mobile Phone
+					div.col-sm-12.col-md-12
+						input#mobilePhone.form-control(type="text", placeholder="Enter Mobile No")
+				div.form-group.checkbox
+					label
+						input(type='checkbox', value='')
+						small
+							| I agree to the Smail&nbsp;
+							a(href='#') Terms of service
+							|&nbsp;and&nbsp;
+							a(href='#') Privacy policy.
+
+				button.btn.btn-default(type="submit") Submit
 
 block footer
 	include ../footer/welcomeFooter

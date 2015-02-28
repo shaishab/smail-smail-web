@@ -88,12 +88,16 @@ node_modules/
 bower_components
 
 # --------------------
-# Build Files or Compile
+# Build Files
 # --------------------
 build/css/*.css
-css/**/*.css
 
 # --------------------
 # App Files
 # --------------------
 public/sass/**/*.css
+
+# --------------------
+# Compile Files 
+# --------------------
+public/css/**/*.css

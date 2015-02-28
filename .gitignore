@@ -88,9 +88,10 @@ node_modules/
 bower_components
 
 # --------------------
-# Build Files
+# Build Files or Compile
 # --------------------
 build/css/*.css
+css/**/*.css
 
 # --------------------
 # App Files

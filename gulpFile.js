@@ -27,11 +27,13 @@ _ = require("lodash");
 
 scriptSourceDirectory = "public/js";
 
-styleSourceDirectory = "public/sass";
+scriptBuildDirectory = "public/build/js";
 
 buildDirectory = "public/build";
 
-scriptBuildDirectory = "public/build/js";
+styleSourceDirectory = "public/sass";
+
+styleCompileDirectory = "public/css";
 
 styleBuildDirectory = "public/build/css";
 
@@ -41,26 +43,46 @@ gulp.task("clean", function() {
     return del([buildDirectory]);
 });
 
-gulp.task("compile:sass", function() {
+gulp.task("compileWelcome:sass", function() {
     var files;
-    files = styleSourceDirectory + "/**/*.scss";
-    return gulp.src(files).pipe(changed(styleSourceDirectory, {
+    files = styleSourceDirectory + "/welcome/*.scss";
+    return gulp.src(files).pipe(changed(styleSourceDirectory + "/welcome", {
         extension: ".css"
     })).pipe(sass({
-        includePaths: styleSourceDirectory,
+        includePaths: styleSourceDirectory + "/welcome",
         errLogToConsole: true
-    })).pipe(gulp.dest(styleSourceDirectory));
+    })).pipe(gulp.dest(styleCompileDirectory + "/welcome"));
 });
 
-gulp.task("compile:all", ["compile:sass"]);
+gulp.task("compileLoggedin:sass", function() {
+    var files;
+    files = styleSourceDirectory + "/loggedin/*.scss";
+    return gulp.src(files).pipe(changed(styleSourceDirectory + "/loggedin", {
+        extension: ".css"
+    })).pipe(sass({
+        includePaths: styleSourceDirectory + "/loggedin",
+        errLogToConsole: true
+    })).pipe(gulp.dest(styleCompileDirectory + "/loggedin"));
+});
 
-gulp.task("bundle:all", ["compile:all"], function(){
-    sourceFiles = styleSourceDirectory + "/**/*.css";
+gulp.task("bundleWelcome:css", function(){
+    sourceFiles = styleCompileDirectory + "/welcome/*.css";
     gulp.src(sourceFiles)
-    .pipe(concat ("bundle.css"))
+    .pipe(concat ("welcome.css"))
     .pipe(csso())
     .pipe(gulp.dest(buildDirectory + "/css"))
 });
 
+gulp.task("bundleLoggedin:css", function(){
+    sourceFiles = styleCompileDirectory + "/loggedin/*.css";
+    gulp.src(sourceFiles)
+    .pipe(concat ("smail.css"))
+    .pipe(csso())
+    .pipe(gulp.dest(buildDirectory + "/css"))
+});
 
-gulp.task("default", ["bundle:all"]);
+gulp.task("compile:all", ["compileWelcome:sass", "compileLoggedin:sass", "bundle:all"]);
+
+gulp.task("bundle:all", ["bundleWelcome:css", "bundleLoggedin:css"]);
+
+gulp.task("default", ["compile:all"]);

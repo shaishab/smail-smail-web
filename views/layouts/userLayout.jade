@@ -5,12 +5,14 @@ html
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
 		title= title
 		link(rel="styleSheet", href="/bower_components/bootstrap/dist/css/bootstrap.min.css")
-		link(rel='stylesheet', href='/build/css/welcome.css')
+		link(rel='stylesheet', href='/build/css/smail.css')
 
 	body
 		block topbar
+
+		block left-sidebar
 			
-		div.container.welcome-content
+		div.container-fluid.welcome-content
 			block content
 
 		block footer

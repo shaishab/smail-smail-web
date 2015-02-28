@@ -1,0 +1,20 @@
+extends ../layouts/layout
+
+block topbar
+	include ../topbar/signUpSuccessTopbar
+
+block content
+	div.row-fluid
+		h1.text-center Welcome to Smail!
+	div.row-fluid
+		h3.text-center 
+			|Your new email address is 
+			span.text-primary shaishab.cse@gmail.com
+	div.row-fluid
+		h4.text-center Thanks for creating a Smail Account. Now you can send mail easily from your account.
+		h4.text-center To show your inbox click to Continue to Smail
+	div.row-fluid.text-center
+		a.btn.btn-primary.btn-responsive(href='/smail', role='button', style="margin-left: 5px;") Continue to Smail 
+
+block footer
+	include ../footer/welcomeFooter

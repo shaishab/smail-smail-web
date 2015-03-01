@@ -10,9 +10,11 @@ html
 	body
 		block topbar
 
-		block left-sidebar
-			
-		div.container-fluid.welcome-content
-			block content
+		div.container-fluid(style="margin-top: 30px;")
+			div.row-fluid
+				div.col-sm-12.col-md-12
+					include ../sidebar/leftSidebar
+
+					block content
 
 		block footer

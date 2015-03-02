@@ -1,5 +1,7 @@
 "user strict";
-var _, buildDirectory, changed, coffee, concat, csso, del, fontsBuildDirectory, fs, gulp, gutil, imagemin, jade, jshint, mkdirp, plumber, sass, scriptBuildDirectory, scriptSourceDirectory, size, styleBuildDirectory, styleSourceDirectory, uglify, watch;
+var html2js, _, buildDirectory, changed, coffee, concat, csso, del, fontsBuildDirectory, fs, gulp, gutil;
+var imagemin, jade, jshint, mkdirp, plumber, sass, scriptBuildDirectory, scriptSourceDirectory, size;
+var styleBuildDirectory, styleSourceDirectory, uglify, watch, styleCompileDirectory, templateDirectory;
 
 gulp = require("gulp");
 
@@ -25,6 +27,8 @@ uglify = require("gulp-uglify");
 
 _ = require("lodash");
 
+html2js = require('gulp-html2js');
+
 scriptSourceDirectory = "public/js";
 
 scriptBuildDirectory = "public/build/js";
@@ -37,7 +41,8 @@ styleCompileDirectory = "public/css";
 
 styleBuildDirectory = "public/build/css";
 
-fontsBuildDirectory = "public/build/fonts";
+templateDirectory = "public/directives"
+
 
 gulp.task("clean", function() {
     return del([buildDirectory]);
@@ -81,7 +86,17 @@ gulp.task("bundleLoggedin:css", function(){
     .pipe(gulp.dest(buildDirectory + "/css"))
 });
 
-gulp.task("compile:all", ["compileWelcome:sass", "compileLoggedin:sass", "bundle:all"]);
+gulp.task("compile:jade", function() {
+  var files;
+  files = templateDirectory + "/**/*.jade";
+  return gulp.src(files).pipe(changed(templateDirectory, {
+    extension: ".html"
+  })).pipe(jade({
+    pretty: true
+  })).pipe(gulp.dest(templateDirectory));
+});
+
+gulp.task("compile:all", ["compileWelcome:sass", "compileLoggedin:sass", "bundle:all", "compile:jade"]);
 
 gulp.task("bundle:all", ["bundleWelcome:css", "bundleLoggedin:css"]);
 

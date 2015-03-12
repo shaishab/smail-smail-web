@@ -1,5 +1,5 @@
 doctype html
-html(ng-app="smail")
+html(ng-app="smail" lang="en")
 	head
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
@@ -10,12 +10,11 @@ html(ng-app="smail")
 	body
 		block topbar
 
-		div.container-fluid(style="margin-top: 30px;")
+		div.container-fluid(style="min-height:480px;")
 			div.row-fluid
-				div.col-sm-12.col-md-12
-					include ../sidebar/leftSidebar
+				include ../sidebar/leftSidebar
 
-					block content
+				block content
 
 		block footer
 		script(src="/bower_components/angular/angular.js")

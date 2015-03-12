@@ -27,8 +27,6 @@ uglify = require("gulp-uglify");
 
 _ = require("lodash");
 
-html2js = require('gulp-html2js');
-
 scriptSourceDirectory = "public/js";
 
 scriptBuildDirectory = "public/build/js";

@@ -4,8 +4,153 @@ block topbar
 	smail-topbar
 
 block content
-	div.col-sm-10.col-md-10
-		h2.text-center Welcome to Smail Inbox
+	//div.col-sm-10.col-md-10
+	.row
+		.col-sm-3.col-md-2
+			.btn-group
+				button.btn.btn-primary.dropdown-toggle(type='button', data-toggle='dropdown')
+					| Mail
+					span.caret
+				ul.dropdown-menu(role='menu')
+					li
+						a(href='#') Mail
+					li
+						a(href='#') Contacts
+					li
+						a(href='#') Tasks
+		.col-sm-9.col-md-10
+			// Split button
+			.btn-group
+				button.btn.btn-default(type='button')
+					.checkbox(style='margin: 0;')
+						label
+							input(type='checkbox')
+				button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
+					span.caret
+					span.sr-only Toggle Dropdown
+				ul.dropdown-menu(role='menu')
+					li
+						a(href='#') All
+					li
+						a(href='#') None
+					li
+						a(href='#') Read
+					li
+						a(href='#') Unread
+					li
+						a(href='#') Starred
+					li
+						a(href='#') Unstarred
+			button.btn.btn-default(type='button', data-toggle='tooltip', title='Refresh')
+				span.glyphicon.glyphicon-refresh
+			// Single button
+			.btn-group
+				button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
+					| More
+					span.caret
+				ul.dropdown-menu(role='menu')
+					li
+						a(href='#') Mark all as read
+					li.divider
+					li.text-center
+						small.text-muted Select messages to see more actions
+			.pull-right
+				span.text-muted
+					b 1
+					| –
+					b 50
+					|  of
+					b 277
+				.btn-group.btn-group-sm
+					button.btn.btn-default(type='button')
+						span.glyphicon.glyphicon-chevron-left
+					button.btn.btn-default(type='button')
+						span.glyphicon.glyphicon-chevron-right
+	hr
+	.row
+		.col-sm-3.col-md-2
+			a.btn.btn-danger.btn-sm.btn-block(href='#', role='button') COMPOSE
+			hr
+			ul.nav.nav-pills.nav-stacked
+				li.active
+					a(href='#')
+						span.badge.pull-right 42
+						|Inbox
+				li
+					a(href='http://www.jquery2dotnet.com') Starred
+				li
+					a(href='http://www.jquery2dotnet.com') Important
+				li
+					a(href='http://www.jquery2dotnet.com') Sent Mail
+				li
+					a(href='http://www.jquery2dotnet.com')
+						span.badge.pull-right 3
+						| Drafts
+		.col-sm-9.col-md-10
+			// Nav tabs
+			ul.nav.nav-tabs
+				li.active
+					a(href='#home', data-toggle='tab')
+						span.glyphicon.glyphicon-inbox
+						|Primary
+				li
+					a(href='#profile', data-toggle='tab')
+						span.glyphicon.glyphicon-user
+						|Social
+				li
+					a(href='#messages', data-toggle='tab')
+						span.glyphicon.glyphicon-tags
+						|Promotions
+				li
+					a(href='#settings', data-toggle='tab')
+						span.glyphicon.glyphicon-plus.no-margin
+			// Tab panes
+			.tab-content
+				#home.tab-pane.fade.in.active
+					.list-group
+						a.list-group-item(href='#')
+							.checkbox
+								label
+									input(type='checkbox')
+							span.glyphicon.glyphicon-star-empty
+							span.name(style='min-width: 120px;display: inline-block;') Bhaumik Patel
+							span This is big title
+							span.text-muted(style='font-size: 11px;') - Hi hello how r u ?
+							span.badge 12:10 AM
+							span.pull-right
+								span.glyphicon.glyphicon-paperclip
+						a.list-group-item(href='#')
+							.checkbox
+								label
+									input(type='checkbox')
+							span.glyphicon.glyphicon-star-empty
+							span.name(style='min-width: 120px;display: inline-block;') Bhaumik Patel
+							span This is big title
+							span.text-muted(style='font-size: 11px;') - Hi hello how r u ?
+							span.badge 12:10 AM
+							span.pull-right
+								span.glyphicon.glyphicon-paperclip
+						a.list-group-item.read(href='#')
+							.checkbox
+								label
+									input(type='checkbox')
+							span.glyphicon.glyphicon-star
+							span.name(style='min-width: 120px;display: inline-block;') Bhaumik Patel
+							span This is big title
+							span.text-muted(style='font-size: 11px;') - Hi hello how r u ?
+							span.badge 12:10 AM
+							span.pull-right
+								span.glyphicon.glyphicon-paperclip
+				#profile.tab-pane.fade.in
+					.list-group
+						.list-group-item
+							span.text-center This tab is empty.
+				#messages.tab-pane.fade.in
+					| ...
+				#settings.tab-pane.fade.in
+					| This tab is empty.
+
+
 
 block footer
 	include ../footer/welcomeFooter
